@@ -1,8 +1,5 @@
-import com.google.common.primitives.Chars;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 
 public class BuzzPuzzle {
     private String puzzle;
@@ -13,12 +10,11 @@ public class BuzzPuzzle {
     }
 
     public String solve(String input) {
-        int inputMatchCount = 0;
-        for (char inputElement : input.toCharArray()) {
-            if (puzzle.indexOf(inputElement) != -1) {
-                inputMatchCount = inputMatchCount + 1;
-            }
-        }
+        ImmutableList<Character> inputChars = Lists.charactersOf(input);
+
+        long inputMatchCount = inputChars.stream().
+                filter(inputChar -> puzzle.indexOf(inputChar) != -1).
+                count();
 
         return String.format("0A%dB", inputMatchCount);
     }
