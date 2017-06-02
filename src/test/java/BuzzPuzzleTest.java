@@ -26,4 +26,13 @@ public class BuzzPuzzleTest {
         String answer = puzzle.solve("1203");
         assertEquals("2A1B",answer);
     }
+
+    @Test
+    public void should_tell_us_empty_when_nothing_matched(){
+        String puzzleStr = "1234";
+        BuzzPuzzle puzzle = new BuzzPuzzle(puzzleStr);
+        String answer = puzzle.solve("0000");
+        assertEquals("",answer);
+    }
 }
+
