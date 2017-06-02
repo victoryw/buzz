@@ -25,8 +25,9 @@ public class BuzzPuzzle {
                 }).
                 count();
 
-        return inputValueAndPositionMatchedCount > 0 ?
-                String.format("%dA0B", inputValueAndPositionMatchedCount)
-                : String.format("0A%dB", inputMatchCount);
+        long onlyValueMatchedCount = inputMatchCount - inputValueAndPositionMatchedCount;
+        return String.format("%dA%dB",
+                inputValueAndPositionMatchedCount,
+                onlyValueMatchedCount);
     }
 }

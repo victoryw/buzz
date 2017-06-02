@@ -18,4 +18,12 @@ public class BuzzPuzzleTest {
         String answer = puzzle.solve("1200");
         assertEquals("2A0B",answer);
     }
+
+    @Test
+    public void should_puzzle_the_position_value_all_right_and_only_value_matched(){
+        String puzzleStr = "1234";
+        BuzzPuzzle puzzle = new BuzzPuzzle(puzzleStr);
+        String answer = puzzle.solve("1203");
+        assertEquals("2A1B",answer);
+    }
 }
