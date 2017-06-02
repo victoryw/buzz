@@ -10,4 +10,12 @@ public class BuzzPuzzleTest {
         String answer = puzzle.solve("0021");
         assertEquals("0A2B",answer);
     }
+
+    @Test
+    public void should_puzzle_more_than_the_chars_is_correct_and_position_right(){
+        String puzzleStr = "1234";
+        BuzzPuzzle puzzle = new BuzzPuzzle(puzzleStr);
+        String answer = puzzle.solve("1200");
+        assertEquals("2A0B",answer);
+    }
 }

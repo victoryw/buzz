@@ -16,6 +16,17 @@ public class BuzzPuzzle {
                 filter(inputChar -> puzzle.indexOf(inputChar) != -1).
                 count();
 
-        return String.format("0A%dB", inputMatchCount);
+        long inputValueAndPositionMatchedCount = inputChars.stream().
+                filter(inputChar -> {
+                    int inputCharPosInPuzzle = puzzle.indexOf(inputChar);
+                    int inputCharPosInInput = input.indexOf(inputChar);
+                    return inputCharPosInPuzzle != -1
+                            && inputCharPosInInput == inputCharPosInPuzzle;
+                }).
+                count();
+
+        return inputValueAndPositionMatchedCount > 0 ?
+                String.format("%dA0B", inputValueAndPositionMatchedCount)
+                : String.format("0A%dB", inputMatchCount);
     }
 }
