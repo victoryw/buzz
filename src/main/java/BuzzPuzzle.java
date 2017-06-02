@@ -13,13 +13,13 @@ public class BuzzPuzzle {
     }
 
     public String solve(String input) {
-        boolean isRight = false;
+        int inputMatchCount = 0;
         for (char inputElement : input.toCharArray()) {
             if (puzzle.indexOf(inputElement) != -1) {
-                isRight = true;
+                inputMatchCount = inputMatchCount + 1;
             }
         }
 
-        return String.format("0A%dB", isRight ? 1 : 0);
+        return String.format("0A%dB", inputMatchCount);
     }
 }
