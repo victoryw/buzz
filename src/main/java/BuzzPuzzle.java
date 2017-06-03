@@ -5,7 +5,6 @@ public class BuzzPuzzle {
     private String puzzle;
 
     public BuzzPuzzle(String puzzle) {
-
         this.puzzle = puzzle;
     }
 
