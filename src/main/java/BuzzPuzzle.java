@@ -4,8 +4,8 @@ import com.google.common.collect.Lists;
 public class BuzzPuzzle {
     private String puzzle;
 
-    public BuzzPuzzle(String puzzle) {
-        this.puzzle = puzzle;
+    public BuzzPuzzle(PuzzleBuilder puzzleBuilder) {
+        this.puzzle = puzzleBuilder.getPuzzle();
     }
 
     public String solve(String input) {

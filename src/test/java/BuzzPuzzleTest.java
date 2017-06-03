@@ -10,7 +10,8 @@ public class BuzzPuzzleTest {
     @Before
     public void setUp() throws Exception {
         String puzzleStr = "1234";
-        puzzle = new BuzzPuzzle(puzzleStr);
+        FixedPuzzleBuilder fixedPuzzleBuilder = new FixedPuzzleBuilder(puzzleStr);
+        puzzle = new BuzzPuzzle(fixedPuzzleBuilder);
     }
 
     @Test

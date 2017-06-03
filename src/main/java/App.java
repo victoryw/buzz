@@ -11,7 +11,8 @@ public class App {
         System.out.print("Enter String");
         System.out.println();
 
-        BuzzPuzzle puzzle = new BuzzPuzzle("1234");
+        RandomPuzzleBuilder randomPuzzleBuilder = new RandomPuzzleBuilder();
+        BuzzPuzzle puzzle = new BuzzPuzzle(randomPuzzleBuilder);
         String input = br.readLine();
         System.out.println(puzzle.solve(input));
     }
